@@ -1,0 +1,252 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Titillium Web', serif;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#mainTitle {
+  left: 1%;
+  top: 2%;
+  width: auto;
+  max-width: 600px;
+  /* height: 50px; */
+  padding: 15px 20px;
+  background: #201d1d;
+  position: absolute;
+  /* padding: 20px; */
+  z-index: 2;
+  border-radius: 15px;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+.toggle-container {
+  position: absolute;
+  top: 500px;
+  left: 10px;
+  z-index: 3;
+}
+
+#info {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: stretch; /* Stretch items to fill the container */
+  z-index: 1;
+  position: absolute;
+  width: 20%;
+  top: 1%;
+  bottom: 50%;
+  right: 1%;
+  height: 97%;
+  background: #201d1d;
+  padding: 25px;
+  color: white;
+  border-radius: 10px;
+  overflow-y: auto; 
+}
+
+#info a {
+  color: lightgray;
+}
+
+#info a:hover {
+  color: white;
+  opacity: 0.3;
+}
+
+#title {
+  font-size: 25px;
+  font-family: 'Oswald', sans-serif;
+}
+
+#title span {
+  font-size: 14px;
+  float: right;
+  margin-right: 10px;
+}
+
+#desc {
+  text-align: left;
+  color: lightgray;
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#legend-container {
+    background-color: rgb(241, 241, 241);
+    border: 1px solid #3f3d3d;
+    padding: 10px;
+    z-index: 10;
+    max-height: 400px;
+    overflow-y: auto;
+    width: 93%;
+    height: 20%;
+    color:rgb(0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+}
+
+#legend-container :hover{
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+  background-color: #9b9898;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    z-index: 11;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.legend-label {
+    white-space: nowrap;
+}
+
+.break {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+.dot {
+    display: inline-block;
+    margin-top: 5px;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.dot-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-style: italic;
+}
+
+#chart_div {
+  padding: 10px;
+  z-index: 10;
+  max-height: 400px;
+  overflow-y: auto;
+  width: 93%;
+  height: 35%;
+  /* margin-bottom: 3px; */
+}
+
+#line_div {
+  width: 20%;
+  height: 13%;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* the style of the layer control menu */
+/* #menu {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 60px;
+    border-radius: 3px;
+    width: 120px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-family: 'Open Sans', sans-serif;
+} */
+
+#menu {
+  background: #fff;
+  position: absolute;
+  z-index: 1;
+  top: 2.75%; /* Adjusted to push it below the #mainTitle */
+  left: 27.5%; /* Adjust as needed to align under the #mainTitle if it's not centered */
+  border-radius: 3px;
+  width: 120px; /* Adjust width as necessary */
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* each layer on the menu */
+#menu a {
+    font-size: 13px;
+    color: #404040;
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/* the last item of the layer items will not include a seperator */
+#menu a:last-child {
+    border: none;
+}
+
+/* change color and background color while a pointer is on an hybrid link. */
+#menu a:hover {
+    background-color: #f8f8f8;
+    color: #404040;
+}
+
+#menu a.active {
+    background-color: #3887be;
+    color: #ffffff;
+}
+
+#menu a.active:hover {
+    background: #3074a4;
+}
+
+/* the layout of the legend panel */
+#legend {
+    display: none;
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    width: auto;
+    background: #fff;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 1000;
+}
+
+/* each line for a break */
+.break {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    margin: 2px 0; /* Adjust based on your preference */
+}
+
+.square {
+    width: 20px; /* Adjust based on your preference */
+    height: 20px; /* Adjust based on your preference */
+    display: inline-block;
+    margin-right: 5px; /* Space between square and text */
+}
+
+.square-label {
+    display: inline; /* Ensure label is in line with square */
+    margin-left: 5px; /* Adjust based on your preference */
+    vertical-align: middle; /* Align text with square */
+    position: relative; /* Adjust positioning as needed */
+}
